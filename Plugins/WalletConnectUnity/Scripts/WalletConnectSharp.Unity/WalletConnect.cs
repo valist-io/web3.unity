@@ -24,7 +24,7 @@ namespace WalletConnectSharp.Unity
     public class WalletConnect : BindableMonoBehavior
     {
         [SerializeField] private Button LoginButton;
-        
+
         public Dictionary<string, AppEntry> SupportedWallets
         {
             get;
@@ -247,7 +247,6 @@ namespace WalletConnectSharp.Unity
         private void NextScene()
         {
             // save account
-            // _Config.Account = WalletConnect.ActiveSession.Accounts[0];
             string Account = WalletConnect.ActiveSession.Accounts[0];
             PlayerPrefs.SetString("Account", Account);
             // move to next scene
@@ -426,5 +425,15 @@ namespace WalletConnectSharp.Unity
             return;
 #endif
         }
+
+        async void OnApplicationQuit()
+        {
+            if (WalletConnect.ActiveSession != null)
+            {
+                await WalletConnect.ActiveSession.Disconnect();
+                Debug.Log("Mobile Wallet Disonnected");
+            }
+        }
+
     }
 }
