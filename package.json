@@ -16,5 +16,8 @@
   "keywords": [
     "web3"
   ],
-  "description": "Unity SDK for building games that interact with blockchains."
+  "description": "Unity SDK for building games that interact with blockchains.",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "1.1.0"
+  }
 }
