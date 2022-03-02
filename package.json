@@ -18,6 +18,6 @@
   ],
   "description": "Unity SDK for building games that interact with blockchains.",
   "dependencies": {
-    "com.unity.nuget.newtonsoft-json": "1.1.0"
+    "com.unity.nuget.newtonsoft-json": "2.0.0"
   }
 }
